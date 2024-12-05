@@ -43,21 +43,33 @@ void loop() {
 
   if(digitalRead(a_battonA) == 1){
     val_a++;
+  }else{
+  
   }
   if(digitalRead(a_battonB) == 1){
     val_a--;
+  }else{
+  
   }
   if(digitalRead(b_battonA) == 1){
     val_b++;
+  }else{
+  
   }
   if(digitalRead(b_battonB) == 1){
     val_b--;
+  }else{
+  
   }
   if(digitalRead(c_battonA) == 1){
     val_c++;
+  }else{
+  
   }
   if(digitalRead(c_battonB) == 1){
     val_c--;
+  }else{
+  
   }
   rehit();
 }
