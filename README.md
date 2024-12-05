@@ -19,6 +19,13 @@ int formyla = 0;
 
 
 void setup() {
+  pinMode(a_battonA, INPUT)
+  pinMode(a_battonB, INPUT)
+  pinMode(b_battonA, INPUT)
+  pinMode(b_battonB, INPUT)
+  pinMode(c_battonA, INPUT)
+  pinMode(c_battonB, INPUT)
+
   display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // инициализация дисплея по интерфейсу I2C, адрес 0x3C
   display.clearDisplay(); // очистка дисплея
   display.setTextSize(1); // установка размера шрифта
@@ -33,11 +40,7 @@ void setup() {
 /*------------------------------------------------*/
 void loop() {
 
-  display.print (val_a);
-  display.print (val_b);
-  display.print (val_c); // записываем в буфер памяти дисплея нашу фразу
-  display.display(); // и её выводим на экран
-  
+
   if(digitalRead(a_battonA) == 1){
     val_a++;
   }
@@ -63,6 +66,10 @@ void rehit(){
   formyla = map(analogRead(A0), 0, 1023, 0, 10);
   switch (formyla) {
     case 0:
+      display.print (val_a);
+      display.print (val_b);
+      display.print (val_c); // записываем в буфер памяти дисплея нашу фразу
+      display.display(); // и её выводим на экран
       
       break;
     case 1:
